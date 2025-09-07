@@ -225,8 +225,8 @@ export default function TermsOfService() {
               </p>
               <div className="bg-gray-50 p-6 rounded-lg mt-4">
                 <p className="text-gray-700">
-                  <strong>Email:</strong> support@provencheck.store<br/>
-                  <strong>Website:</strong> <Link href="https://provencheck.store" className="text-green-600 hover:text-green-700">https://provencheck.store</Link>
+                  <strong>Email:</strong> support@historivin.store<br/>
+                  <strong>Website:</strong> <Link href="https://provencheck.site" className="text-green-600 hover:text-green-700">https://provencheck.store</Link>
                 </p>
               </div>
             </section>

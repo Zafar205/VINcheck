@@ -118,17 +118,17 @@ export default function App() {
                 height={40}
                 className="mr-3"
               />
-              <div className="text-2xl font-bold text-blue-600">ProvenCheck</div>
+              <div className="text-2xl font-bold text-green-600">ProvenCheck</div>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+              <a href="#" className="text-gray-700 hover:text-green-600 transition-colors">Home</a>
+              <a href="#" className="text-gray-700 hover:text-green-600 transition-colors">About</a>
+              <a href="#" className="text-gray-700 hover:text-green-600 transition-colors">Contact</a>
               <button
                 onClick={scrollToVinInput}
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors"
               >
                 Get Report
               </button>
@@ -149,12 +149,12 @@ export default function App() {
           {isMenuOpen && (
             <div className="md:hidden py-4 border-t">
               <div className="flex flex-col space-y-4">
-                <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-                <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-                <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                <a href="#" className="text-gray-700 hover:text-green-600 transition-colors">Home</a>
+                <a href="#" className="text-gray-700 hover:text-green-600 transition-colors">About</a>
+                <a href="#" className="text-gray-700 hover:text-green-600 transition-colors">Contact</a>
                 <button
                   onClick={scrollToVinInput}
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors w-fit"
+                  className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors w-fit"
                 >
                   Get Report
                 </button>
@@ -165,14 +165,14 @@ export default function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+      <section className="bg-gradient-to-br from-green-50 to-green-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Content */}
             <div className="text-center lg:text-left">
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 ProvenCheck: Uncover the full story of your<br />
-                <span className="text-blue-600">future or current car</span>
+                <span className="text-green-600">future or current car</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl">
                 Welcome to ProvenCheck - the most trusted source for vehicle history reports. Avoid scams, overpaying, or unsafe vehicles. Get a comprehensive car history report with accident records, mileage verification, title checks, and market analysis in just a few hours.
@@ -189,7 +189,7 @@ export default function App() {
                         placeholder="Enter VIN number (17 characters)"
                         value={vinInput}
                         onChange={handleVinChange}
-                        className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-lg"
+                        className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-lg"
                         maxLength={17}
                         required
                       />
@@ -213,7 +213,7 @@ export default function App() {
                       placeholder="Enter your email address"
                       value={emailInput}
                       onChange={(e) => setEmailInput(e.target.value)}
-                      className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-lg"
+                      className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-lg"
                       required
                     />
                     <div className="mt-1 text-sm text-gray-500">
@@ -227,7 +227,7 @@ export default function App() {
                       placeholder="Enter car model (e.g., Honda Civic, BMW X5, Toyota Camry)"
                       value={carModelInput}
                       onChange={(e) => setCarModelInput(e.target.value)}
-                      className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-lg"
+                      className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-lg"
                       required
                     />
                     <div className="mt-1 text-sm text-gray-500">
@@ -238,12 +238,12 @@ export default function App() {
                   <button
                     type="submit"
                     disabled={vinInput.length !== 17 || !emailInput.trim() || !carModelInput.trim() || isSubmitting}
-                    className="w-full bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-semibold text-lg"
+                    className="w-full bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-semibold text-lg"
                   >
                     {isSubmitting ? 'Submitting...' : 'Get report'}
                   </button>
                 </form>
-                <button className="text-blue-600 hover:text-blue-700 mt-4 text-sm underline">
+                <button className="text-green-600 hover:text-green-700 mt-4 text-sm underline">
                   Don&apos;t have a VIN?
                 </button>
 
@@ -334,7 +334,7 @@ export default function App() {
                 <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg">
                   <span className="text-sm font-semibold">✓ Trusted</span>
                 </div>
-                <div className="absolute -bottom-4 -left-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg">
+                <div className="absolute -bottom-4 -left-4 bg-green-600 text-white px-4 py-2 rounded-full shadow-lg">
                   <span className="text-sm font-semibold">$39.99</span>
                 </div>
               </div>
@@ -429,7 +429,7 @@ export default function App() {
               }
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-2xl">{item.icon}</span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">{item.title}</h3>
@@ -472,8 +472,8 @@ export default function App() {
             ].map((testimonial, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-blue-600 font-semibold">{testimonial.author[0]}</span>
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                    <span className="text-green-600 font-semibold">{testimonial.author[0]}</span>
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">{testimonial.author}</div>
@@ -495,12 +495,12 @@ export default function App() {
       </section>
 
       {/* Car History Report Section */}
-      <section className="py-20 bg-blue-600">
+      <section className="py-20 bg-green-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             ProvenCheck - Complete Car History Reports
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-green-100 mb-8">
             Avoid unexpected costs and problems with our comprehensive vehicle history reports. Enter your VIN now and get a full car report delivered to your email from ProvenCheck.
           </p>
 
@@ -512,7 +512,7 @@ export default function App() {
                   placeholder="Enter VIN number (17 characters)"
                   value={vinInput}
                   onChange={handleVinChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-lg"
                   maxLength={17}
                   required
                 />
@@ -527,7 +527,7 @@ export default function App() {
                   placeholder="Enter your email address"
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-lg"
                   required
                 />
                 <div className="mt-1 text-sm text-gray-600">
@@ -541,7 +541,7 @@ export default function App() {
                   placeholder="Enter car model (e.g., Honda Civic, BMW X5, Toyota Camry)"
                   value={carModelInput}
                   onChange={(e) => setCarModelInput(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-lg"
                   required
                 />
                 <div className="mt-1 text-sm text-gray-600">
@@ -552,12 +552,12 @@ export default function App() {
               <button
                 type="submit"
                 disabled={vinInput.length !== 17 || !emailInput.trim() || !carModelInput.trim() || isSubmitting}
-                className="w-full bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-semibold text-lg"
+                className="w-full bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-semibold text-lg"
               >
                 {isSubmitting ? 'Submitting...' : 'Get report'}
               </button>
             </form>
-            <button className="text-blue-600 hover:text-blue-700 text-sm underline mb-6">
+            <button className="text-green-600 hover:text-green-700 text-sm underline mb-6">
               I don&apos;t have a VIN
             </button>
 
@@ -734,7 +734,7 @@ export default function App() {
               }
             ].map((item, index) => (
               <div key={index} className="text-center relative">
-                <div className="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                <div className="w-20 h-20 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
                   {item.step}
                 </div>
                 <div className="text-4xl mb-4">{item.icon}</div>
@@ -845,7 +845,7 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <div className="text-center mb-6">
-                <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-4xl">👥</span>
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900">Ownership Timeline</h4>
@@ -857,7 +857,7 @@ export default function App() {
                   { year: "2024-Present", owner: "Current Owner", state: "Texas", type: "Personal Use" }
                 ].map((owner, index) => (
                   <div key={index} className="flex items-center py-3 border-b last:border-b-0">
-                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 text-sm font-semibold">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4 text-sm font-semibold">
                       {index + 1}
                     </div>
                     <div className="flex-1">
@@ -891,8 +891,8 @@ export default function App() {
                   }
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
-                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                      <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                      <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
@@ -935,7 +935,7 @@ export default function App() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Good Condition:</span>
-                  <span className="font-semibold text-blue-600">$22,800</span>
+                  <span className="font-semibold text-green-600">$22,800</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Fair Condition:</span>
@@ -950,7 +950,7 @@ export default function App() {
 
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">📊</span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Depreciation Analysis</h3>
@@ -962,7 +962,7 @@ export default function App() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Current Value:</span>
-                  <span className="font-semibold text-blue-600">$22,800</span>
+                  <span className="font-semibold text-green-600">$22,800</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Depreciation:</span>
@@ -1040,7 +1040,7 @@ export default function App() {
               <div key={index} className="text-center bg-white p-6 rounded-lg shadow-md">
                 <div className="text-4xl mb-4">{award.icon}</div>
                 <h3 className="font-semibold text-gray-900 mb-2">{award.award}</h3>
-                <div className="text-blue-600 font-medium mb-1">{award.year}</div>
+                <div className="text-green-600 font-medium mb-1">{award.year}</div>
                 <div className="text-sm text-gray-600">{award.organization}</div>
               </div>
             ))}
@@ -1144,7 +1144,7 @@ export default function App() {
       </section>
 
       {/* Sample Report Preview */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section className="py-20 bg-gradient-to-br from-green-50 to-green-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -1206,7 +1206,7 @@ export default function App() {
                     <span className="text-gray-600">{item.category}:</span>
                     <span className={`font-semibold ${item.color === 'green' ? 'text-green-600' :
                         item.color === 'yellow' ? 'text-yellow-600' :
-                          item.color === 'red' ? 'text-red-600' : 'text-blue-600'
+                          item.color === 'red' ? 'text-red-600' : 'text-green-600'
                       }`}>
                       {item.status}
                     </span>
@@ -1219,7 +1219,7 @@ export default function App() {
           <div className="mt-12 text-center">
             <button
               onClick={scrollToVinInput}
-              className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg"
+              className="bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-colors font-semibold text-lg"
             >
               Get Your Complete ProvenCheck Report Now
             </button>
@@ -1266,7 +1266,7 @@ export default function App() {
             ].map((article, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                 <div className="mb-4">
-                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">{article.category}</span>
+                  <span className="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">{article.category}</span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{article.title}</h3>
                 <p className="text-gray-600 mb-4">{article.excerpt}</p>
@@ -1274,13 +1274,13 @@ export default function App() {
                   <span>{article.date}</span>
                   <span>{article.readTime}</span>
                 </div>
-                <button className="mt-4 text-blue-600 hover:text-blue-700 font-medium">Read More →</button>
+                <button className="mt-4 text-green-600 hover:text-green-700 font-medium">Read More →</button>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-colors font-semibold">
+            <button className="bg-white text-green-600 border-2 border-green-600 px-8 py-3 rounded-lg hover:bg-green-600 hover:text-white transition-colors font-semibold">
               View All Articles
             </button>
           </div>
@@ -1294,7 +1294,7 @@ export default function App() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Need help?
             </h2>
-            <h3 className="text-2xl text-blue-600 mb-4">We are here for you 24/7</h3>
+            <h3 className="text-2xl text-green-600 mb-4">We are here for you 24/7</h3>
             <p className="text-xl text-gray-600">
               Our support team is always available to help with your queries.
             </p>
@@ -1328,7 +1328,7 @@ export default function App() {
             ))}
           </div>
 
-          <div className="mt-16 bg-blue-50 p-8 rounded-lg">
+          <div className="mt-16 bg-green-50 p-8 rounded-lg">
             <p className="text-gray-700 text-center max-w-4xl mx-auto">
               ProvenCheck is a non-refundable digital service. Reports are usually delivered within 1 hour via email. However, we mention a 6–12 hour delivery window to account for any rare delays or technical issues. Please ensure your VIN is entered correctly before purchase, as incorrect entries will still result in full report delivery.
             </p>
@@ -1348,13 +1348,13 @@ export default function App() {
                 height={32}
                 className="mr-3"
               />
-              <div className="text-2xl font-bold text-blue-400">ProvenCheck</div>
+              <div className="text-2xl font-bold text-green-400">ProvenCheck</div>
             </div>
 
             <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
-              <a href="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
-              <a href="/terms" className="hover:text-blue-400 transition-colors">Terms & Conditions</a>
-              <a href="/refund" className="hover:text-blue-400 transition-colors">Refund Policy</a>
+              <a href="/privacy" className="hover:text-green-400 transition-colors">Privacy Policy</a>
+              <a href="/terms" className="hover:text-green-400 transition-colors">Terms & Conditions</a>
+              <a href="/refund" className="hover:text-green-400 transition-colors">Refund Policy</a>
             </div>
           </div>
 
@@ -1366,7 +1366,7 @@ export default function App() {
 
       {/* Cart Widget */}
       <div className="fixed bottom-4 right-4 z-50">
-        <button className="bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors">
+        <button className="bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-colors">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13v6a2 2 0 002 2h6a2 2 0 002-2v-6" />
           </svg>

@@ -95,16 +95,16 @@ export const metadata = {
     ],
     other: [
       { rel: "icon", url: "/car-logo.webp", sizes: "16x16", type: "image/webp" },
-      { rel: "mask-icon", url: "/car-logo.webp", color: "#2563eb" }
+      { rel: "mask-icon", url: "/car-logo.webp", color: "#16a34a" }
     ]
   },
   // App-specific meta
   other: {
   "apple-mobile-web-app-title": "ProvenCheckStore",
   "application-name": "ProvenCheckStore",
-    "msapplication-TileColor": "#2563eb",
+    "msapplication-TileColor": "#16a34a",
     "msapplication-TileImage": "/car-logo.webp",
-    "theme-color": "#2563eb",
+    "theme-color": "#16a34a",
     // Enhanced SERP meta tags
     "price": "USD 39.99",
     "availability": "InStock",
@@ -127,7 +127,7 @@ export default function RootLayout({ children }) {
         <link rel="shortcut icon" href="/car-logo.webp" />
         <link rel="apple-touch-icon" href="/car-logo.webp" sizes="180x180" />
         <link rel="apple-touch-icon-precomposed" href="/car-logo.webp" />
-        <link rel="mask-icon" href="/car-logo.webp" color="#2563eb" />
+        <link rel="mask-icon" href="/car-logo.webp" color="#16a34a" />
         
         {/* Microsoft Tile Configuration */}
         <meta name="msapplication-TileImage" content="/car-logo.webp" />

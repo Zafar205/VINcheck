@@ -229,8 +229,8 @@ export default function RefundPolicy() {
               </p>
               <div className="bg-gray-50 p-6 rounded-lg mt-4">
                 <p className="text-gray-700">
-                  <strong>Email:</strong> support@provencheck.store<br/>
-                  <strong>Website:</strong> <Link href="https://provencheck.store" className="text-green-600 hover:text-green-700">https://provencheck.store</Link><br/>
+                  <strong>Email:</strong> support@historivin.store<br/>
+                  <strong>Website:</strong> <Link href="https://provencheck.site" className="text-green-600 hover:text-green-700">https://provencheck.store</Link><br/>
                   <strong>Response Time:</strong> 24-48 hours
                 </p>
               </div>
@@ -239,7 +239,7 @@ export default function RefundPolicy() {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">13. Acknowledgment</h2>
               <div className="bg-green-50 border-l-4 border-green-400 p-6">
-                <p className="text-blue-800 font-medium">
+                <p className="text-green-800 font-medium">
                   By purchasing a ProvenCheck vehicle history report, you acknowledge that you have read, understood, and agree to this no-refund policy. You understand that all sales are final and that no refunds will be issued under any circumstances.
                 </p>
               </div>

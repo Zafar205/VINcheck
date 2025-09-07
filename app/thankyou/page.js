@@ -48,7 +48,7 @@ export default function ThankYou() {
           </h1>
           
           <p className="text-xl text-gray-600 mb-8">
-            Your ProvenCheckStore VIN report request has been successfully submitted and payment has been processed. Your comprehensive vehicle history report will be delivered soon. For any query feel free to message us on support@provencheck.store
+            Your ProvenCheckStore VIN report request has been successfully submitted and payment has been processed. Your comprehensive vehicle history report will be delivered soon. For any query feel free to message us on support@historivin.store
           </p>
 
           {/* Order Details */}
@@ -115,7 +115,7 @@ export default function ThankYou() {
               Back to Home
             </Link>
             <button 
-              onClick={() => window.location.href = 'mailto:support@provencheck.com'}
+              onClick={() => window.location.href = 'mailto:support@historivin.com'}
               className="bg-white text-green-600 border-2 border-green-600 px-8 py-3 rounded-lg hover:bg-green-600 hover:text-white transition-colors font-semibold"
             >
               Contact Support
@@ -137,7 +137,7 @@ export default function ThankYou() {
                 </svg>
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Email Support</h3>
-              <p className="text-gray-600 text-sm">support@provencheck.com</p>
+              <p className="text-gray-600 text-sm">support@historivin.store</p>
             </div>
 
             <div className="text-center">
