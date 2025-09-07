@@ -26,11 +26,11 @@ export default function RefundPolicy() {
                   height={40}
                   className="mr-3"
                 />
-                <div className="text-2xl font-bold text-blue-600">ProvenCheck</div>
+                <div className="text-2xl font-bold text-green-600">ProvenCheck</div>
               </Link>
             </div>
             <nav className="flex items-center space-x-6">
-              <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors">Back to Home</Link>
+              <Link href="/" className="text-gray-700 hover:text-green-600 transition-colors">Back to Home</Link>
             </nav>
           </div>
         </div>
@@ -230,7 +230,7 @@ export default function RefundPolicy() {
               <div className="bg-gray-50 p-6 rounded-lg mt-4">
                 <p className="text-gray-700">
                   <strong>Email:</strong> support@provencheck.store<br/>
-                  <strong>Website:</strong> <Link href="https://provencheck.store" className="text-blue-600 hover:text-blue-700">https://provencheck.store</Link><br/>
+                  <strong>Website:</strong> <Link href="https://provencheck.store" className="text-green-600 hover:text-green-700">https://provencheck.store</Link><br/>
                   <strong>Response Time:</strong> 24-48 hours
                 </p>
               </div>
@@ -238,7 +238,7 @@ export default function RefundPolicy() {
 
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">13. Acknowledgment</h2>
-              <div className="bg-blue-50 border-l-4 border-blue-400 p-6">
+              <div className="bg-green-50 border-l-4 border-green-400 p-6">
                 <p className="text-blue-800 font-medium">
                   By purchasing a ProvenCheck vehicle history report, you acknowledge that you have read, understood, and agree to this no-refund policy. You understand that all sales are final and that no refunds will be issued under any circumstances.
                 </p>
@@ -260,13 +260,13 @@ export default function RefundPolicy() {
                 height={32}
                 className="mr-3"
               />
-              <div className="text-xl font-bold text-blue-400">ProvenCheck</div>
+              <div className="text-xl font-bold text-green-400">ProvenCheck</div>
             </div>
 
             <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
-              <Link href="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-blue-400 transition-colors">Terms & Conditions</Link>
-              <Link href="/refund" className="hover:text-blue-400 transition-colors font-semibold">Refund Policy</Link>
+              <Link href="/privacy" className="hover:text-green-400 transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-green-400 transition-colors">Terms & Conditions</Link>
+              <Link href="/refund" className="hover:text-green-400 transition-colors font-semibold">Refund Policy</Link>
             </div>
           </div>
 
