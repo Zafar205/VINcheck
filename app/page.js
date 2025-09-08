@@ -5,7 +5,7 @@ import Image from 'next/image'
 export default function App() {
   const [vinInput, setVinInput] = useState('')
   const [emailInput, setEmailInput] = useState('')
-  const [carModelInput, setCarModelInput] = useState('')
+  const [vehicleModelInput, setVehicleModelInput] = useState('')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -31,8 +31,8 @@ export default function App() {
   const handleVinSubmit = async (e) => {
     e.preventDefault()
 
-    if (vinInput.trim().length !== 17) {
-      alert('Please enter a valid 17-character VIN number')
+    if (!vinInput.trim()) {
+      alert('Please enter a VIN or vehicle identification number')
       return
     }
 
@@ -41,8 +41,8 @@ export default function App() {
       return
     }
 
-    if (!carModelInput.trim()) {
-      alert('Please enter the car model')
+    if (!vehicleModelInput.trim()) {
+      alert('Please enter the vehicle model')
       return
     }
 
@@ -62,7 +62,7 @@ export default function App() {
         body: JSON.stringify({
           vin: vinInput.trim(),
           email: emailInput.trim(),
-          carModel: carModelInput.trim()
+          vehicleModel: vehicleModelInput.trim()
         })
       })
 
@@ -73,12 +73,12 @@ export default function App() {
         // Reset form
         setVinInput('')
         setEmailInput('')
-        setCarModelInput('')
+        setVehicleModelInput('')
         // Store form data in localStorage for the thank you page
         localStorage.setItem('vinReport', JSON.stringify({
           vin: vinInput.trim(),
           email: emailInput.trim(),
-          carModel: carModelInput.trim(),
+          vehicleModel: vehicleModelInput.trim(),
           timestamp: new Date().toISOString()
         }))
         // Redirect to Paddle checkout
@@ -99,7 +99,7 @@ export default function App() {
 
   // Function to validate VIN input
   const handleVinChange = (e) => {
-    const value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, '')
+    const value = e.target.value.toUpperCase()
     setVinInput(value)
   }
 
@@ -172,10 +172,10 @@ export default function App() {
             <div className="text-center lg:text-left">
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 ProvenCheck: Uncover the full story of your<br />
-                <span className="text-green-600">future or current car</span>
+                <span className="text-green-600">future or current vehicle</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl">
-                Welcome to ProvenCheck - the most trusted source for vehicle history reports. Avoid scams, overpaying, or unsafe vehicles. Get a comprehensive car history report with accident records, mileage verification, title checks, and market analysis in just a few hours.
+                Welcome to ProvenCheck - the most trusted source for vehicle history reports. Avoid scams, overpaying, or unsafe vehicles. Get a comprehensive history report for cars, motorcycles, boats, RVs, and more with accident records, mileage verification, title checks, and market analysis in just a few hours.
               </p>
 
               {/* VIN Input Form */}
@@ -186,23 +186,16 @@ export default function App() {
                       <input
                         id="vin-input-field"
                         type="text"
-                        placeholder="Enter VIN number (17 characters)"
+                        placeholder="Enter VIN, License Plate, or Vehicle ID"
                         value={vinInput}
                         onChange={handleVinChange}
                         className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-lg"
-                        maxLength={17}
                         required
                       />
                       <div className="mt-2 flex justify-between items-center text-sm">
-                        <span className={`${vinInput.length === 17 ? 'text-green-600' : 'text-gray-500'}`}>
-                          {vinInput.length}/17 characters
+                        <span className="text-gray-500">
+                          Enter any vehicle identification number
                         </span>
-                        {vinInput.length > 0 && vinInput.length < 17 && (
-                          <span className="text-red-500">VIN must be exactly 17 characters</span>
-                        )}
-                        {vinInput.length === 17 && (
-                          <span className="text-green-600">✓ Valid length</span>
-                        )}
                       </div>
                     </div>
                   </div>
@@ -224,9 +217,9 @@ export default function App() {
                   <div>
                     <input
                       type="text"
-                      placeholder="Enter car model (e.g., Honda Civic, BMW X5, Toyota Camry)"
-                      value={carModelInput}
-                      onChange={(e) => setCarModelInput(e.target.value)}
+                      placeholder="Enter vehicle model (e.g., Honda Civic, Harley Davidson, Sea Ray Boat)"
+                      value={vehicleModelInput}
+                      onChange={(e) => setVehicleModelInput(e.target.value)}
                       className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-lg"
                       required
                     />
@@ -237,14 +230,14 @@ export default function App() {
 
                   <button
                     type="submit"
-                    disabled={vinInput.length !== 17 || !emailInput.trim() || !carModelInput.trim() || isSubmitting}
+                    disabled={!vinInput.trim() || !emailInput.trim() || !vehicleModelInput.trim() || isSubmitting}
                     className="w-full bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-semibold text-lg"
                   >
                     {isSubmitting ? 'Submitting...' : 'Get report'}
                   </button>
                 </form>
                 <button className="text-green-600 hover:text-green-700 mt-4 text-sm underline">
-                  Don&apos;t have a VIN?
+                  Don&apos;t have a VIN or Vehicle ID?
                 </button>
 
                 <div className="mt-6 text-left">
@@ -351,7 +344,7 @@ export default function App() {
               What ProvenCheck checks when preparing your vehicle history report
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              ProvenCheck reports are powered by a global automotive data network, covering over 1 billion data points across thousands of vehicles. Our comprehensive VIN check service ensures you get accurate, reliable information.
+              ProvenCheck reports are powered by a global automotive data network, covering over 1 billion data points across thousands of vehicles including cars, motorcycles, boats, RVs, and more. Our comprehensive identification check service ensures you get accurate, reliable information.
             </p>
           </div>
 
@@ -406,7 +399,7 @@ export default function App() {
               Choose wisely with ProvenCheck
             </h2>
             <p className="text-xl text-gray-600">
-              Make a confident car buying decision with the help of a comprehensive ProvenCheck vehicle history report.
+              Make a confident vehicle buying decision with the help of a comprehensive ProvenCheck vehicle history report.
             </p>
           </div>
 
@@ -414,12 +407,12 @@ export default function App() {
             {[
               {
                 title: "Avoid expensive mistakes",
-                description: "Uncover the full car history before making a purchase. Do not fall for cosmetic fixes hiding deeper issues.",
+                description: "Uncover the full vehicle history before making a purchase. Do not fall for cosmetic fixes hiding deeper issues.",
                 icon: "💰"
               },
               {
                 title: "Save precious time",
-                description: "No need for long investigations or guesswork. Just enter a VIN and get reliable insights in hours.",
+                description: "No need for long investigations or guesswork. Just enter a vehicle ID and get reliable insights in hours.",
                 icon: "⏰"
               },
               {
@@ -448,7 +441,7 @@ export default function App() {
               Hear from people who trust ProvenCheck
             </h2>
             <p className="text-xl text-gray-600">
-              See how real customers are making better car decisions with ProvenCheck vehicle history reports:
+              See how real customers are making better vehicle decisions with ProvenCheck vehicle history reports:
             </p>
           </div>
 
@@ -498,10 +491,10 @@ export default function App() {
       <section className="py-20 bg-green-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            ProvenCheck - Complete Car History Reports
+            ProvenCheck - Complete Vehicle History Reports
           </h2>
           <p className="text-xl text-green-100 mb-8">
-            Avoid unexpected costs and problems with our comprehensive vehicle history reports. Enter your VIN now and get a full car report delivered to your email from ProvenCheck.
+            Avoid unexpected costs and problems with our comprehensive vehicle history reports. Enter your vehicle identification number now and get a full report delivered to your email from ProvenCheck.
           </p>
 
           <div className="bg-white p-8 rounded-2xl shadow-lg">
@@ -509,15 +502,14 @@ export default function App() {
               <div>
                 <input
                   type="text"
-                  placeholder="Enter VIN number (17 characters)"
+                  placeholder="Enter VIN, License Plate, or Vehicle ID"
                   value={vinInput}
                   onChange={handleVinChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-lg"
-                  maxLength={17}
                   required
                 />
                 <div className="mt-2 text-sm text-gray-600">
-                  {vinInput.length}/17 characters
+                  Enter any vehicle identification number
                 </div>
               </div>
 
@@ -538,9 +530,9 @@ export default function App() {
               <div>
                 <input
                   type="text"
-                  placeholder="Enter car model (e.g., Honda Civic, BMW X5, Toyota Camry)"
-                  value={carModelInput}
-                  onChange={(e) => setCarModelInput(e.target.value)}
+                  placeholder="Enter vehicle model (e.g., Honda Civic, Harley Davidson, Sea Ray Boat)"
+                  value={vehicleModelInput}
+                  onChange={(e) => setVehicleModelInput(e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-lg"
                   required
                 />
@@ -551,14 +543,14 @@ export default function App() {
 
               <button
                 type="submit"
-                disabled={vinInput.length !== 17 || !emailInput.trim() || !carModelInput.trim() || isSubmitting}
+                disabled={!vinInput.trim() || !emailInput.trim() || !vehicleModelInput.trim() || isSubmitting}
                 className="w-full bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-semibold text-lg"
               >
                 {isSubmitting ? 'Submitting...' : 'Get report'}
               </button>
             </form>
             <button className="text-green-600 hover:text-green-700 text-sm underline mb-6">
-              I don&apos;t have a VIN
+              I don&apos;t have a VIN or Vehicle ID
             </button>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
@@ -716,8 +708,8 @@ export default function App() {
             {[
               {
                 step: "01",
-                title: "Enter VIN Number",
-                description: "Simply enter the 17-character Vehicle Identification Number (VIN) of the car you are interested in. You can find this on the dashboard, driver side door, or vehicle documents.",
+                title: "Enter Vehicle ID",
+                description: "Simply enter the Vehicle Identification Number (VIN), license plate, or any identification number of the vehicle you are interested in. You can find VINs on the dashboard, driver side door, or vehicle documents.",
                 icon: "🔤"
               },
               {
@@ -729,7 +721,7 @@ export default function App() {
               {
                 step: "03",
                 title: "Receive Detailed Report",
-                description: "Within 6-12 hours, you will receive a comprehensive report via email containing all the critical information about the vehicles history and condition.",
+                description: "Within 6-12 hours, you will receive a comprehensive report via email containing all the critical information about the vehicle's history and condition.",
                 icon: "📧"
               }
             ].map((item, index) => (
@@ -764,7 +756,7 @@ export default function App() {
               ProvenCheck Comprehensive Vehicle Analysis
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our reports cover every aspect of a vehicle&apos;s history. Here&apos;s what makes ProvenCheck the most trusted choice for vehicle history reports and VIN checks.
+              Our reports cover every aspect of a vehicle&apos;s history. Here&apos;s what makes ProvenCheck the most trusted choice for vehicle history reports and identification checks.
             </p>
           </div>
 
@@ -1068,7 +1060,7 @@ export default function App() {
               },
               {
                 question: "What if I don't have the VIN number?",
-                answer: "If you don't have the VIN, you can usually find it on the dashboard visible through the windshield, on the driver side door frame, or in the vehicle documentation. ProvenCheck also offers assistance in locating VIN numbers for specific vehicles."
+                answer: "If you don't have the VIN, you can usually find it on the dashboard visible through the windshield, on the driver side door frame, or in the vehicle documentation. For other vehicles like boats or motorcycles, check the registration or title documents. ProvenCheck also accepts license plates and other vehicle identification numbers."
               },
               {
                 question: "How long does it take to receive my ProvenCheck report?",
@@ -1076,11 +1068,11 @@ export default function App() {
               },
               {
                 question: "Can I get a refund if I'm not satisfied with my ProvenCheck report?",
-                answer: "ProvenCheck is a digital service and all sales are final. We do not offer refunds as the report is delivered immediately upon purchase. Please ensure you enter the correct VIN before purchasing."
+                answer: "ProvenCheck is a digital service and all sales are final. We do not offer refunds as the report is delivered immediately upon purchase. Please ensure you enter the correct vehicle identification number before purchasing."
               },
               {
                 question: "Do ProvenCheck reports cover vehicles from all countries?",
-                answer: "We currently cover vehicles from over 35 countries across North America, Europe, Oceania, Africa, and the Middle East. Our coverage is continuously expanding to include more international markets."
+                answer: "We currently cover vehicles from over 35 countries across North America, Europe, Oceania, Africa, and the Middle East including cars, motorcycles, boats, RVs, and other vehicles. Our coverage is continuously expanding to include more international markets and vehicle types."
               },
               {
                 question: "What makes ProvenCheck different from competitors?",
@@ -1330,7 +1322,7 @@ export default function App() {
 
           <div className="mt-16 bg-green-50 p-8 rounded-lg">
             <p className="text-gray-700 text-center max-w-4xl mx-auto">
-              ProvenCheck is a non-refundable digital service. Reports are usually delivered within 1 hour via email. However, we mention a 6–12 hour delivery window to account for any rare delays or technical issues. Please ensure your VIN is entered correctly before purchase, as incorrect entries will still result in full report delivery.
+              ProvenCheck is a non-refundable digital service. Reports are usually delivered within 1 hour via email. However, we mention a 6–12 hour delivery window to account for any rare delays or technical issues. Please ensure your vehicle identification number is entered correctly before purchase, as incorrect entries will still result in full report delivery.
             </p>
           </div>
         </div>
@@ -1376,9 +1368,9 @@ export default function App() {
 
       {/* SEO Content for Search Engines */}
       <div className="sr-only">
-  <h1>ProvenCheck - Vehicle History Reports and VIN Checks</h1>
-  <p>ProvenCheck offers comprehensive vehicle history reports, VIN number checks, car history reports, auto history verification, used car reports, vehicle records analysis, accident history checks, mileage verification services, title record checks, automotive history reports, vehicle inspection reports, car buying assistance, and detailed vehicle analysis. Trust ProvenCheck for all your vehicle history needs.</p>
-  <p>Keywords: ProvenCheck, proven check store, vehicle history report, VIN check, car history, auto history report, used car report, vehicle records, accident history, mileage verification, title check, car buying, automotive history, vehicle inspection, proven check, provencheck store, vin reports, car reports, auto reports</p>
+  <h1>ProvenCheck - Vehicle History Reports and Vehicle ID Checks</h1>
+  <p>ProvenCheck offers comprehensive vehicle history reports, VIN number checks, vehicle history reports, auto history verification, used vehicle reports, vehicle records analysis, accident history checks, mileage verification services, title record checks, automotive history reports, vehicle inspection reports, vehicle buying assistance, and detailed vehicle analysis for cars, motorcycles, boats, RVs, and more. Trust ProvenCheck for all your vehicle history needs.</p>
+  <p>Keywords: ProvenCheck, proven check store, vehicle history report, VIN check, vehicle history, auto history report, used vehicle report, vehicle records, accident history, mileage verification, title check, vehicle buying, automotive history, vehicle inspection, proven check, provencheck store, vin reports, vehicle reports, auto reports, motorcycle history, boat history, RV history</p>
       </div>
     </div>
   )

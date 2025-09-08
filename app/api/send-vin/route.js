@@ -5,25 +5,19 @@ export async function POST(request) {
   try {
     console.log('=== EMAIL API CALLED ===');
     
-    const { vin, email, carModel } = await request.json();
-    // console.log('Received data:', { vin, email, carModel });
+    const { vin, email, vehicleModel } = await request.json();
+    // console.log('Received data:', { vin, email, vehicleModel });
 
     // Validate input
-    if (!vin || !email || !carModel) {
-      console.log('❌ Missing VIN, email, or car model');
+    if (!vin || !email || !vehicleModel) {
+      console.log('❌ Missing VIN, email, or vehicle model');
       return NextResponse.json(
-        { success: false, message: 'VIN, email, and car model are required' },
+        { success: false, message: 'VIN, email, and vehicle model are required' },
         { status: 400 }
       );
     }
 
-    if (vin.length !== 17) {
-      console.log('❌ Invalid VIN length:', vin.length);
-      return NextResponse.json(
-        { success: false, message: 'VIN must be exactly 17 characters' },
-        { status: 400 }
-      );
-    }
+
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -81,12 +75,12 @@ export async function POST(request) {
     const adminInfo = await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: ['car.check.store@gmail.com'],
-      subject: `ProvenCheck - New VIN Report Request - ${vin} (${carModel}) `,
+      subject: `ProvenCheck - New Vehicle Report Request - ${vin} (${vehicleModel}) `,
       text: `
-New VIN Report Request Received
+New Vehicle Report Request Received
 
-VIN Number: ${vin}
-Car Model: ${carModel}
+VIN/Vehicle ID: ${vin}
+Vehicle Model: ${vehicleModel}
 Customer Email: ${email}
 Request Time: ${formattedDate}
 
@@ -95,19 +89,19 @@ Please process this request and send the vehicle history report to the customer.
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">
           <div style="text-align: center; margin-bottom: 30px;">
-            <h2 style="color: #16a34a; margin: 0;">New VIN Report Request - ProvenCheck</h2>
+            <h2 style="color: #16a34a; margin: 0;">New Vehicle Report Request - ProvenCheck</h2>
           </div>
           
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
             <h3 style="color: #1f2937; margin-top: 0;">Request Details</h3>
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
-                <td style="padding: 8px 0; font-weight: bold; color: #374151;">VIN Number:</td>
+                <td style="padding: 8px 0; font-weight: bold; color: #374151;">VIN/Vehicle ID:</td>
                 <td style="padding: 8px 0; color: #6b7280; font-family: monospace; letter-spacing: 1px;">${vin}</td>
               </tr>
               <tr>
-                <td style="padding: 8px 0; font-weight: bold; color: #374151;">Car Model:</td>
-                <td style="padding: 8px 0; color: #6b7280;">${carModel}</td>
+                <td style="padding: 8px 0; font-weight: bold; color: #374151;">Vehicle Model:</td>
+                <td style="padding: 8px 0; color: #6b7280;">${vehicleModel}</td>
               </tr>
               <tr>
                 <td style="padding: 8px 0; font-weight: bold; color: #374151;">Customer Email:</td>
@@ -122,7 +116,7 @@ Please process this request and send the vehicle history report to the customer.
           
           <div style="background-color: #fef3c7; padding: 15px; border-radius: 8px; border-left: 4px solid #f59e0b;">
             <p style="margin: 0; color: #92400e;">
-              <strong>Action Required:</strong> Please process this VIN report request and send the complete vehicle history report to the customer's email address.
+              <strong>Action Required:</strong> Please process this vehicle report request and send the complete vehicle history report to the customer's email address.
             </p>
           </div>
           
@@ -139,7 +133,7 @@ Please process this request and send the vehicle history report to the customer.
 
     return NextResponse.json({ 
       success: true,
-      message: 'VIN report request submitted successfully. You will receive your report within 6-12 hours.',
+      message: 'Vehicle report request submitted successfully. You will receive your report within 6-12 hours.',
       adminMessageId: adminInfo.messageId,
       timestamp: timestamp
     });
