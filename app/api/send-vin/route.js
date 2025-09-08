@@ -81,7 +81,7 @@ export async function POST(request) {
     const adminInfo = await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: ['car.check.store@gmail.com'],
-      subject: `New VIN Report Request - ${vin} (${carModel})`,
+      subject: `ProvenCheck - New VIN Report Request - ${vin} (${carModel}) `,
       text: `
 New VIN Report Request Received
 
