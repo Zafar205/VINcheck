@@ -50,11 +50,11 @@ export const metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/car-logo.webp",
+        url: "/logo.png",
         width: 1200,
         height: 630,
   alt: "ProvenCheck - Vehicle History Reports",
-        type: "image/webp"
+        type: "image/png"
       },
     ],
   },
@@ -63,7 +63,7 @@ export const metadata = {
     card: "summary_large_image",
   title: "ProvenCheck - #1 Vehicle History Reports",
     description: "Get comprehensive vehicle history reports. Check accident history, verify mileage, and get market value analysis. Trusted by car buyers worldwide.",
-    images: ["/car-logo.webp"],
+    images: ["/logo.png"],
   creator: "@provencheck",
   site: "@provencheck",
   },
@@ -86,16 +86,16 @@ export const metadata = {
   // Enhanced favicon configuration
   icons: {
     icon: [
-      { url: "/car-logo.webp", type: "image/webp" }
+      { url: "/favicon.ico", type: "image/x-icon" }
     ],
-    shortcut: "/car-logo.webp",
+    shortcut: "/favicon.ico",
     apple: [
-      { url: "/car-logo.webp", sizes: "180x180", type: "image/webp" },
-      { url: "/car-logo.webp", sizes: "152x152", type: "image/webp" }
+      { url: "/logo.png", sizes: "180x180", type: "image/png" },
+      { url: "/logo.png", sizes: "152x152", type: "image/png" }
     ],
     other: [
-      { rel: "icon", url: "/car-logo.webp", sizes: "16x16", type: "image/webp" },
-      { rel: "mask-icon", url: "/car-logo.webp", color: "#16a34a" }
+      { rel: "icon", url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" },
+      { rel: "mask-icon", url: "/logo.png", color: "#16a34a" }
     ]
   },
   // App-specific meta
@@ -103,7 +103,7 @@ export const metadata = {
   "apple-mobile-web-app-title": "ProvenCheck",
   "application-name": "ProvenCheck",
     "msapplication-TileColor": "#16a34a",
-    "msapplication-TileImage": "/car-logo.webp",
+    "msapplication-TileImage": "/logo.png",
     "theme-color": "#16a34a",
     // Enhanced SERP meta tags
     "price": "USD 39.99",
@@ -123,18 +123,18 @@ export default function RootLayout({ children }) {
         
         {/* Enhanced Favicon Configuration */}
 
-        <link rel="icon" type="image/webp" href="/car-logo.webp" sizes="16x16" />
-        <link rel="shortcut icon" href="/car-logo.webp" />
-        <link rel="apple-touch-icon" href="/car-logo.webp" sizes="180x180" />
-        <link rel="apple-touch-icon-precomposed" href="/car-logo.webp" />
-        <link rel="mask-icon" href="/car-logo.webp" color="#16a34a" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo.png" sizes="180x180" />
+        <link rel="apple-touch-icon-precomposed" href="/logo.png" />
+        <link rel="mask-icon" href="/logo.png" color="#16a34a" />
         
         {/* Microsoft Tile Configuration */}
-        <meta name="msapplication-TileImage" content="/car-logo.webp" />
-        <meta name="msapplication-square70x70logo" content="/car-logo.webp" />
-        <meta name="msapplication-square150x150logo" content="/car-logo.webp" />
-        <meta name="msapplication-wide310x150logo" content="/car-logo.webp" />
-        <meta name="msapplication-square310x310logo" content="/car-logo.webp" />
+        <meta name="msapplication-TileImage" content="/logo.png" />
+        <meta name="msapplication-square70x70logo" content="/logo.png" />
+        <meta name="msapplication-square150x150logo" content="/logo.png" />
+        <meta name="msapplication-wide310x150logo" content="/logo.png" />
+        <meta name="msapplication-square310x310logo" content="/logo.png" />
         
         <link rel="manifest" href="/manifest.json" />
         <meta name="format-detection" content="telephone=no" />
@@ -149,7 +149,7 @@ export default function RootLayout({ children }) {
               "name": "ProvenCheckStore",
               "alternateName": "ProvenCheck",
               "url": "https://provencheck.site",
-              "logo": "https://provencheck.site/car-logo.webp",
+              "logo": "https://provencheck.site/logo.png",
               "description": "Leading provider of comprehensive vehicle history reports and VIN checks for car buyers worldwide.",
               "sameAs": [
                 "https://twitter.com/provencheck",

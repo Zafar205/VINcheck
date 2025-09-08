@@ -20,7 +20,7 @@ export default function RefundPolicy() {
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
                 <Image
-                  src="/car-logo.webp"
+                  src="/logo.png"
                   alt="ProvenCheck"
                   width={40}
                   height={40}
@@ -254,7 +254,7 @@ export default function RefundPolicy() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0 flex items-center">
               <Image
-                src="/car-logo.webp"
+                src="/logo.png"
                 alt="ProvenCheck"
                 width={32}
                 height={32}
