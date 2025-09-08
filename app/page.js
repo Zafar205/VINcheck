@@ -17,6 +17,7 @@ export default function App() {
         behavior: 'smooth',
         block: 'center'
       })
+      
       // Focus on the input field after scrolling
       setTimeout(() => {
         const vinInputField = document.getElementById('vin-input-field')
