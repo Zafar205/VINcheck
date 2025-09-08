@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://provencheck.store'
+  const baseUrl = 'https://provencheck.site'
   
   return [
     {
