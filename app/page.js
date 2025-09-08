@@ -176,7 +176,7 @@ export default function App() {
                 <span className="text-green-600">future or current vehicle</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl">
-                Welcome to ProvenCheck - the most trusted source for vehicle history reports. Avoid scams, overpaying, or unsafe vehicles. Get a comprehensive history report for cars, motorcycles, boats, RVs, and more with accident records, mileage verification, title checks, and market analysis in just a few hours.
+                Welcome to ProvenCheck - the most trusted source for vehicle history reports. Avoid scams, overpaying, or unsafe vehicles. Get a comprehensive history report for <b>cars, motorcycles, boats, RVs, and more </b>with accident records, mileage verification, title checks, and market analysis in just a few hours.
               </p>
 
               {/* VIN Input Form */}
