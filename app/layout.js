@@ -12,19 +12,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "ProvenCheckStore - #1 Vehicle History Reports | ProvenCheck Car Reports",
-  description: "ProvenCheckStore offers the most comprehensive vehicle history reports. Get instant VIN checks, accident history, mileage verification, title records, and market value analysis. Trusted by thousands of car buyers worldwide. Avoid costly mistakes with our detailed car history reports.",
-  keywords: "provencheckstore, provencheck store ,proven check store, vehicle history report, VIN check, car history, auto history report, used car report, vehicle records, accident history, mileage verification, title check, car buying, automotive history, vehicle inspection",
+  title: "ProvenCheck - #1 Vehicle History Reports | ProvenCheck Car Reports",
+  description: "ProvenCheck offers the most comprehensive vehicle history reports. Get instant VIN checks, accident history, mileage verification, title records, and market value analysis. Trusted by thousands of car buyers worldwide. Avoid costly mistakes with our detailed car history reports.",
+  keywords: "provencheck, provencheck store ,proven check store, vehicle history report, VIN check, car history, auto history report, used car report, vehicle records, accident history, mileage verification, title check, car buying, automotive history, vehicle inspection",
   authors: [{ name: "ProvenCheck Team" }],
   creator: "ProvenCheck",
   publisher: "ProvenCheck",
   // Enhanced meta tags for better SERP control
-  metadataBase: new URL("https://provencheck.store"),
+  metadataBase: new URL("https://provencheck.site"),
   alternates: {
-  canonical: "https://provencheck.store",
+  canonical: "https://provencheck.site",
     languages: {
-  "en-US": "https://provencheck.store",
-  "x-default": "https://provencheck.store"
+  "en-US": "https://provencheck.site",
+  "x-default": "https://provencheck.site"
     }
   },
   robots: {
@@ -44,8 +44,8 @@ export const metadata = {
   openGraph: {
   title: "ProvenCheckStore - #1 Vehicle History Reports | Complete Car History Check",
   description: "Get comprehensive vehicle history reports from ProvenCheckStore. Check accident history, verify mileage, review title records, and get market value analysis. Trusted by car buyers worldwide.",
-  url: "https://provencheck.store",
-  siteName: "ProvenCheckStore",
+  url: "https://provencheck.site",
+  siteName: "ProvenCheckSite",
     type: "website",
     locale: "en_US",
     images: [
@@ -53,7 +53,7 @@ export const metadata = {
         url: "/car-logo.webp",
         width: 1200,
         height: 630,
-  alt: "ProvenCheckStore - Vehicle History Reports",
+  alt: "ProvenCheck - Vehicle History Reports",
         type: "image/webp"
       },
     ],
@@ -61,7 +61,7 @@ export const metadata = {
   // Enhanced Twitter Card
   twitter: {
     card: "summary_large_image",
-  title: "ProvenCheckStore - #1 Vehicle History Reports",
+  title: "ProvenCheck - #1 Vehicle History Reports",
     description: "Get comprehensive vehicle history reports. Check accident history, verify mileage, and get market value analysis. Trusted by car buyers worldwide.",
     images: ["/car-logo.webp"],
   creator: "@provencheck",
@@ -100,8 +100,8 @@ export const metadata = {
   },
   // App-specific meta
   other: {
-  "apple-mobile-web-app-title": "ProvenCheckStore",
-  "application-name": "ProvenCheckStore",
+  "apple-mobile-web-app-title": "ProvenCheck",
+  "application-name": "ProvenCheck",
     "msapplication-TileColor": "#16a34a",
     "msapplication-TileImage": "/car-logo.webp",
     "theme-color": "#16a34a",
@@ -148,8 +148,8 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               "name": "ProvenCheckStore",
               "alternateName": "ProvenCheck",
-              "url": "https://provencheck.store",
-              "logo": "https://provencheck.store/car-logo.webp",
+              "url": "https://provencheck.site",
+              "logo": "https://provencheck.site/car-logo.webp",
               "description": "Leading provider of comprehensive vehicle history reports and VIN checks for car buyers worldwide.",
               "sameAs": [
                 "https://twitter.com/provencheck",
@@ -204,11 +204,11 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "ProvenCheckStore",
-              "url": "https://provencheck.store",
+              "url": "https://provencheck.site",
               "description": "Get comprehensive vehicle history reports and VIN checks. Uncover accident history, verify mileage, check title records, and get market value analysis.",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://provencheck.store/?vin={search_term_string}",
+                "target": "https://provencheck.site/?vin={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             })
