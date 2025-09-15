@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function App() {
@@ -8,6 +8,36 @@ export default function App() {
   const [vehicleModelInput, setVehicleModelInput] = useState('')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [localizedPrice, setLocalizedPrice] = useState({ amount: '39.99', currency: 'USD', display: '$39.99' })
+
+  // Detect user country and set localized pricing (US, UK, AU, NZ)
+  useEffect(() => {
+    let cancelled = false
+    const mapPrice = (code) => {
+      switch (code) {
+        case 'US':
+          return { amount: '39.99', currency: 'USD', display: '$39.99' }
+        case 'GB':
+          return { amount: '34.99', currency: 'GBP', display: '£34.99' }
+        case 'AU':
+          return { amount: '59.99', currency: 'AUD', display: 'A$59.99' }
+        case 'NZ':
+          return { amount: '64.99', currency: 'NZD', display: 'NZ$64.99' }
+        default:
+          return { amount: '39.99', currency: 'USD', display: '$39.99' }
+      }
+    }
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(data => {
+        if (!cancelled) {
+          const code = data?.country_code
+          setLocalizedPrice(mapPrice(code))
+        }
+      })
+      .catch(() => {})
+    return () => { cancelled = true }
+  }, [])
 
   // Function to scroll to VIN input section
   const scrollToVinInput = () => {
@@ -298,7 +328,7 @@ export default function App() {
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-600">
                     <div className="mb-2 sm:mb-0">
-                      <strong className="text-gray-900">Price:</strong> $39.99 per report
+                      <strong className="text-gray-900">Price:</strong> <strong>{localizedPrice.display}</strong> per report
                     </div>
                     <div className="mb-2 sm:mb-0">
                       <strong className="text-gray-900">Delivery time:</strong> Within 6–12 hours
@@ -329,7 +359,7 @@ export default function App() {
                   <span className="text-sm font-semibold">✓ Trusted</span>
                 </div>
                 <div className="absolute -bottom-4 -left-4 bg-green-600 text-white px-4 py-2 rounded-full shadow-lg">
-                  <span className="text-sm font-semibold">$39.99</span>
+                  <span className="text-sm font-semibold">{localizedPrice.display}</span>
                 </div>
               </div>
             </div>
@@ -556,7 +586,7 @@ export default function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
               <div className="text-center">
-                <div className="font-semibold text-gray-900">One-time fee: $39.99</div>
+                <div className="font-semibold text-gray-900">One-time fee: {localizedPrice.display}</div>
               </div>
               <div className="text-center">
                 <div className="font-semibold text-gray-900">Report delivered within 6–12 hours</div>
